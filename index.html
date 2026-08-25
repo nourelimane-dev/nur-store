@@ -30,7 +30,6 @@
 </head>
 <body class="bg-cream text-charcoal font-body flex flex-col min-h-screen">
 
-  <!-- Header -->
   <header class="bg-cream sticky top-0 z-50 border-b border-warmgrey/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="index.html" class="font-title text-3xl font-bold tracking-widest text-charcoal">NÜR</a>
@@ -55,18 +54,18 @@
 
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section class="relative bg-sand/40 py-20 lg:py-32">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+    <section class="relative bg-sand/40 py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
         <div class="space-y-6 text-center md:text-right">
           <span class="text-terracotta text-sm uppercase tracking-wider font-semibold">مجموعة 2026</span>
           <h1 class="font-title text-4xl sm:text-6xl text-charcoal leading-tight">بساطة تليق بك.</h1>
-          <p class="text-warmgrey text-lg max-w-md mx-auto md:mx-0">ملابس يومية بجودة عالية وتصميم يدوم. أقل، بصح أحسن.</p>
+          <p class="text-warmgrey text-base sm:text-lg max-w-md mx-auto md:mx-0">ملابس يومية بجودة عالية وتصميم يدوم. أقل، بصح أحسن.</p>
           <div>
-            <a href="shop.html" class="inline-block bg-terracotta text-white px-8 py-3.5 rounded-none font-medium hover:bg-opacity-90 transition">تسوق المجموعة</a>
+            <a href="shop.html" class="inline-block bg-terracotta text-white px-8 py-3.5 font-medium hover:bg-opacity-90 transition">تسوق المجموعة</a>
           </div>
         </div>
-        <div class="h-96 lg:h-[480px]">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000" alt="NUR Collection" class="w-full h-full object-cover">
+        <div class="h-80 sm:h-96 lg:h-[420px] overflow-hidden">
+          <img src="https://i.pinimg.com/736x/ea/b4/1d/eab41ddd59fba789429d3ab9aa699af2.jpg" alt="NUR Collection" class="w-full h-full object-cover">
         </div>
       </div>
     </section>
@@ -75,21 +74,21 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h2 class="font-title text-2xl text-center mb-10">الأصناف</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <a href="shop.html" class="group relative h-80 overflow-hidden bg-sand block">
-          <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-charcoal/20 flex items-end p-6">
+        <a href="shop.html?cat=all" class="group relative h-80 overflow-hidden bg-sand block">
+          <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-charcoal/30 flex items-end p-6">
             <h3 class="font-title text-white text-xl">رجال</h3>
           </div>
         </a>
-        <a href="shop.html" class="group relative h-80 overflow-hidden bg-sand block">
-          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-charcoal/20 flex items-end p-6">
+        <a href="shop.html?cat=women" class="group relative h-80 overflow-hidden bg-sand block">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-charcoal/30 flex items-end p-6">
             <h3 class="font-title text-white text-xl">نساء</h3>
           </div>
         </a>
-        <a href="shop.html" class="group relative h-80 overflow-hidden bg-sand block">
-          <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-charcoal/20 flex items-end p-6">
+        <a href="shop.html?cat=acc" class="group relative h-80 overflow-hidden bg-sand block">
+          <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-charcoal/30 flex items-end p-6">
             <h3 class="font-title text-white text-xl">إكسسوارات</h3>
           </div>
         </a>
@@ -139,7 +138,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-charcoal text-cream py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
       <div class="space-y-3">
@@ -165,22 +163,32 @@
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/cart.js"></script>
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
   <script>
+    const fallbackList = [
+      { id: 1, name: "Essential Tee", category: "تيشيرت", price: 2900, image: "https://i.pinimg.com/736x/ea/b4/1d/eab41ddd59fba789429d3ab9aa699af2.jpg" },
+      { id: 2, name: "Oversized Hoodie", category: "هودي", price: 5900, image: "https://i.pinimg.com/736x/1c/fd/68/1cfd68f37b1f8e3c64ef56ff52b9c7ed.jpg" },
+      { id: 3, name: "Denim Jacket", category: "جاكيت", price: 8900, image: "https://i.pinimg.com/1200x/9e/43/01/9e43019f0566b2ca31c99d129a61aecc.jpg" }
+    ];
+
+    const list = (typeof products !== 'undefined' && products.length) ? products.slice(0, 3) : fallbackList;
     const grid = document.getElementById('featured-grid');
-    grid.innerHTML = products.slice(0, 3).map(p => `
-      <div class="bg-white border border-warmgrey/10 group flex flex-col">
-        <a href="product.html?id=${p.id}" class="h-72 overflow-hidden bg-sand block">
-          <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-        </a>
-        <div class="p-5 flex flex-col flex-grow justify-between">
-          <div>
+
+    grid.innerHTML = list.map(p => `
+      <div class="bg-white border border-warmgrey/10 group flex flex-col justify-between">
+        <div>
+          <a href="product.html?id=${p.id}" class="h-80 overflow-hidden bg-sand block">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-4">
             <span class="text-xs text-warmgrey">${p.category}</span>
             <h3 class="font-title text-lg mt-1"><a href="product.html?id=${p.id}">${p.name}</a></h3>
-            <p class="text-charcoal font-semibold mt-2">${p.price.toLocaleString()} دج</p>
+            <p class="text-charcoal font-semibold mt-1">${p.price.toLocaleString()} دج</p>
           </div>
-          <button onclick="cart.addItem(${p.id}); alert('تمت الإضافة للسلة')" class="mt-4 w-full bg-cream hover:bg-terracotta hover:text-white text-charcoal py-2 text-sm border border-warmgrey/20 transition">أضف للسلة</button>
+        </div>
+        <div class="p-4 pt-0">
+          <button onclick="if(typeof cart !== 'undefined'){ cart.addItem(${p.id}); alert('تمت الإضافة للسلة'); }" class="w-full bg-cream hover:bg-terracotta hover:text-white text-charcoal py-2 text-sm border border-warmgrey/20 transition">أضف للسلة</button>
         </div>
       </div>
     `).join('');
