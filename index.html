@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NÜR | بساطة تليق بك</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#f4efe6',
+            charcoal: '#1c1c1c',
+            terracotta: '#c96f4a',
+            sand: '#e4dccb',
+            warmgrey: '#8a8175'
+          },
+          fontFamily: {
+            title: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal font-body flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-cream sticky top-0 z-50 border-b border-warmgrey/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-title text-3xl font-bold tracking-widest text-charcoal">NÜR</a>
+      
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="index.html" class="text-terracotta">الرئيسية</a>
+        <a href="shop.html" class="hover:text-terracotta transition">المتجر</a>
+        <a href="about.html" class="hover:text-terracotta transition">من نحن</a>
+        <a href="contact.html" class="hover:text-terracotta transition">اتصل بنا</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="cart.html" class="relative p-2 text-charcoal hover:text-terracotta transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative bg-sand/40 py-20 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-center md:text-right">
+          <span class="text-terracotta text-sm uppercase tracking-wider font-semibold">مجموعة 2026</span>
+          <h1 class="font-title text-4xl sm:text-6xl text-charcoal leading-tight">بساطة تليق بك.</h1>
+          <p class="text-warmgrey text-lg max-w-md mx-auto md:mx-0">ملابس يومية بجودة عالية وتصميم يدوم. أقل، بصح أحسن.</p>
+          <div>
+            <a href="shop.html" class="inline-block bg-terracotta text-white px-8 py-3.5 rounded-none font-medium hover:bg-opacity-90 transition">تسوق المجموعة</a>
+          </div>
+        </div>
+        <div class="h-96 lg:h-[480px]">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000" alt="NUR Collection" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="font-title text-2xl text-center mb-10">الأصناف</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="shop.html" class="group relative h-80 overflow-hidden bg-sand block">
+          <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-charcoal/20 flex items-end p-6">
+            <h3 class="font-title text-white text-xl">رجال</h3>
+          </div>
+        </a>
+        <a href="shop.html" class="group relative h-80 overflow-hidden bg-sand block">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-charcoal/20 flex items-end p-6">
+            <h3 class="font-title text-white text-xl">نساء</h3>
+          </div>
+        </a>
+        <a href="shop.html" class="group relative h-80 overflow-hidden bg-sand block">
+          <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-charcoal/20 flex items-end p-6">
+            <h3 class="font-title text-white text-xl">إكسسوارات</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex justify-between items-end mb-10">
+        <div>
+          <h2 class="font-title text-2xl">منتجات مميزة</h2>
+          <p class="text-warmgrey text-sm mt-1">تشكيلة مختارة بعناية</p>
+        </div>
+        <a href="shop.html" class="text-terracotta text-sm hover:underline">عرض الكل ←</a>
+      </div>
+      <div id="featured-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Promise -->
+    <section class="bg-sand/30 py-16 border-y border-warmgrey/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-center">
+        <div class="space-y-2">
+          <h3 class="font-title text-lg">جودة تدوم</h3>
+          <p class="text-warmgrey text-sm">أقمشة مختارة بعناية لتدوم معك سنوات.</p>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-title text-lg">توصيل سريع</h3>
+          <p class="text-warmgrey text-sm">توصيل آمن لجميع الولايات.</p>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-title text-lg">إرجاع سهل</h3>
+          <p class="text-warmgrey text-sm">إمكانية الاستبدال والإرجاع بكل سهولة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div class="max-w-xl mx-auto space-y-4">
+        <h2 class="font-title text-3xl">انضم لعائلة NÜR</h2>
+        <p class="text-warmgrey text-sm">اشترك في النشرة واحصل على 10% على أول طلب.</p>
+        <form onsubmit="event.preventDefault(); alert('شكراً لاشتراكك!');" class="flex gap-2 max-w-md mx-auto pt-2">
+          <input type="email" placeholder="بريدك الإلكتروني" required class="flex-grow px-4 py-3 bg-white border border-warmgrey/30 focus:outline-none focus:border-charcoal text-sm">
+          <button type="submit" class="bg-charcoal text-white px-6 py-3 text-sm hover:bg-opacity-90 transition">اشترك</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-cream py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+      <div class="space-y-3">
+        <span class="font-title text-2xl tracking-widest block text-white">NÜR</span>
+        <p class="text-warmgrey">تصاميم بسيطة، أنيقة، وعصرية.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-white font-medium mb-1">الصفحات</span>
+        <a href="index.html" class="text-warmgrey hover:text-cream">الرئيسية</a>
+        <a href="shop.html" class="text-warmgrey hover:text-cream">المتجر</a>
+        <a href="about.html" class="text-warmgrey hover:text-cream">من نحن</a>
+        <a href="contact.html" class="text-warmgrey hover:text-cream">اتصل بنا</a>
+      </div>
+      <div class="space-y-2 text-warmgrey">
+        <span class="text-white font-medium block mb-1">التواصل</span>
+        <p>شارع ديدوش مراد، الجزائر العاصمة</p>
+        <p>hello@nur.dz</p>
+        <p>@nur.dz</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-warmgrey/20 text-center text-xs text-warmgrey">
+      © 2026 NÜR. جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    const grid = document.getElementById('featured-grid');
+    grid.innerHTML = products.slice(0, 3).map(p => `
+      <div class="bg-white border border-warmgrey/10 group flex flex-col">
+        <a href="product.html?id=${p.id}" class="h-72 overflow-hidden bg-sand block">
+          <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </a>
+        <div class="p-5 flex flex-col flex-grow justify-between">
+          <div>
+            <span class="text-xs text-warmgrey">${p.category}</span>
+            <h3 class="font-title text-lg mt-1"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+            <p class="text-charcoal font-semibold mt-2">${p.price.toLocaleString()} دج</p>
+          </div>
+          <button onclick="cart.addItem(${p.id}); alert('تمت الإضافة للسلة')" class="mt-4 w-full bg-cream hover:bg-terracotta hover:text-white text-charcoal py-2 text-sm border border-warmgrey/20 transition">أضف للسلة</button>
+        </div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NÜR | من نحن</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#f4efe6',
+            charcoal: '#1c1c1c',
+            terracotta: '#c96f4a',
+            sand: '#e4dccb',
+            warmgrey: '#8a8175'
+          },
+          fontFamily: {
+            title: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal font-body flex flex-col min-h-screen">
+
+  <header class="bg-cream sticky top-0 z-50 border-b border-warmgrey/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-title text-3xl font-bold tracking-widest text-charcoal">NÜR</a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-terracotta transition">الرئيسية</a>
+        <a href="shop.html" class="hover:text-terracotta transition">المتجر</a>
+        <a href="about.html" class="text-terracotta">من نحن</a>
+        <a href="contact.html" class="hover:text-terracotta transition">اتصل بنا</a>
+      </nav>
+      <a href="cart.html" class="relative p-2 text-charcoal hover:text-terracotta transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <h1 class="font-title text-4xl sm:text-5xl text-charcoal">قصتنا</h1>
+      <p class="text-warmgrey text-lg leading-relaxed pt-4">
+        بدأت NÜR من فكرة بسيطة: ملابس أساسية بجودة عالية، بلا ضجيج. نؤمن بلي الأناقة الحقيقية فالبساطة - قطع خالدة تلبسها كل يوم وتدوم معاك سنين. كل قطعة مصممة بعناية، من القماش حتى آخر خياطة. NÜR ماشي غير ملابس، راه أسلوب حياة: أقل فوضى، أكثر معنى.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-20 pt-12 border-t border-warmgrey/20 text-center">
+      <div class="bg-sand/30 p-8 space-y-3">
+        <h3 class="font-title text-xl text-charcoal">جودة تدوم</h3>
+        <p class="text-warmgrey text-sm">اختيار أفضل الأقمشة والاهتمام بأدق التفاصيل لتصمد القطع مع الزمن.</p>
+      </div>
+      <div class="bg-sand/30 p-8 space-y-3">
+        <h3 class="font-title text-xl text-charcoal">بساطة تريح</h3>
+        <p class="text-warmgrey text-sm">تصاميم مريحة وعصرية تناسب مختلف الأوقات والأنشطة اليومية.</p>
+      </div>
+      <div class="bg-sand/30 p-8 space-y-3">
+        <h3 class="font-title text-xl text-charcoal">احترام للبيئة</h3>
+        <p class="text-warmgrey text-sm">التركيز على قطع مستدامة تقلك الاستهلاك وتدوم طويلاً.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-charcoal text-cream py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+      <div class="space-y-3">
+        <span class="font-title text-2xl tracking-widest block text-white">NÜR</span>
+        <p class="text-warmgrey">تصاميم بسيطة، أنيقة، وعصرية.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-white font-medium mb-1">الصفحات</span>
+        <a href="index.html" class="text-warmgrey hover:text-cream">الرئيسية</a>
+        <a href="shop.html" class="text-warmgrey hover:text-cream">المتجر</a>
+        <a href="about.html" class="text-warmgrey hover:text-cream">من نحن</a>
+        <a href="contact.html" class="text-warmgrey hover:text-cream">اتصل بنا</a>
+      </div>
+      <div class="space-y-2 text-warmgrey">
+        <span class="text-white font-medium block mb-1">التواصل</span>
+        <p>شارع ديدوش مراد، الجزائر العاصمة</p>
+        <p>hello@nur.dz</p>
+        <p>@nur.dz</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-warmgrey/20 text-center text-xs text-warmgrey">
+      © 2026 NÜR. جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>

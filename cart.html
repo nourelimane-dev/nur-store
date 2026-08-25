@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NÜR | سلة التسوق</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#f4efe6',
+            charcoal: '#1c1c1c',
+            terracotta: '#c96f4a',
+            sand: '#e4dccb',
+            warmgrey: '#8a8175'
+          },
+          fontFamily: {
+            title: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal font-body flex flex-col min-h-screen">
+
+  <header class="bg-cream sticky top-0 z-50 border-b border-warmgrey/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-title text-3xl font-bold tracking-widest text-charcoal">NÜR</a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-terracotta transition">الرئيسية</a>
+        <a href="shop.html" class="hover:text-terracotta transition">المتجر</a>
+        <a href="about.html" class="hover:text-terracotta transition">من نحن</a>
+        <a href="contact.html" class="hover:text-terracotta transition">اتصل بنا</a>
+      </nav>
+      <a href="cart.html" class="relative p-2 text-terracotta transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <h1 class="font-title text-3xl sm:text-4xl text-charcoal mb-8 border-b border-warmgrey/20 pb-4">سلة التسوق</h1>
+
+    <div class="grid lg:grid-cols-3 gap-10 items-start">
+      <div id="cart-items" class="lg:col-span-2 space-y-4"></div>
+
+      <div class="bg-sand/30 p-6 border border-warmgrey/10 space-y-6">
+        <h2 class="font-title text-xl border-b border-warmgrey/20 pb-3">ملخص الطلب</h2>
+        <div class="flex justify-between text-sm">
+          <span class="text-warmgrey">المجموع الفرعي</span>
+          <span id="subtotal" class="font-semibold">0 دج</span>
+        </div>
+        <div class="flex justify-between text-sm border-b border-warmgrey/20 pb-4">
+          <span class="text-warmgrey">التوصيل</span>
+          <span class="text-xs text-warmgrey">يحسب عند إتمام الطلب</span>
+        </div>
+        <div class="flex justify-between text-lg font-semibold pt-2">
+          <span>الإجمالي</span>
+          <span id="total" class="text-terracotta">0 دج</span>
+        </div>
+        <button onclick="if(cart && cart.items.length > 0) alert('تم إرسال الطلب بنجاح!'); else alert('السلة فارغة!');" class="w-full bg-terracotta text-white py-3.5 text-sm font-medium hover:bg-opacity-90 transition">إتمام الطلب</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-charcoal text-cream py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+      <div class="space-y-3">
+        <span class="font-title text-2xl tracking-widest block text-white">NÜR</span>
+        <p class="text-warmgrey">تصاميم بسيطة، أنيقة، وعصرية.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-white font-medium mb-1">الصفحات</span>
+        <a href="index.html" class="text-warmgrey hover:text-cream">الرئيسية</a>
+        <a href="shop.html" class="text-warmgrey hover:text-cream">المتجر</a>
+        <a href="about.html" class="text-warmgrey hover:text-cream">من نحن</a>
+        <a href="contact.html" class="text-warmgrey hover:text-cream">اتصل بنا</a>
+      </div>
+      <div class="space-y-2 text-warmgrey">
+        <span class="text-white font-medium block mb-1">التواصل</span>
+        <p>شارع ديدوش مراد، الجزائر العاصمة</p>
+        <p>hello@nur.dz</p>
+        <p>@nur.dz</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-warmgrey/20 text-center text-xs text-warmgrey">
+      © 2026 NÜR. جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const subtotalEl = document.getElementById('subtotal');
+      const totalEl = document.getElementById('total');
+
+      if (typeof cart === 'undefined' || cart.items.length === 0) {
+        container.innerHTML = `<p class="text-warmgrey py-12 text-center bg-white border border-warmgrey/10">السلة فارغة حالياً. <a href="shop.html" class="text-terracotta underline">تسوق الآن</a></p>`;
+        subtotalEl.textContent = '0 دج';
+        totalEl.textContent = '0 دج';
+        return;
+      }
+
+      container.innerHTML = cart.items.map(item => `
+        <div class="bg-white border border-warmgrey/10 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <img src="${item.image}" class="w-20 h-24 object-cover bg-sand">
+            <div>
+              <h3 class="font-title text-base">${item.name}</h3>
+              <p class="text-xs text-warmgrey mt-1">المقاس: ${item.size}</p>
+              <p class="text-sm font-semibold text-charcoal mt-2">${item.price.toLocaleString()} دج</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
+            <input type="number" min="1" value="${item.quantity}" onchange="cart.updateQuantity(${item.id}, '${item.size}', this.value); renderCart();" class="w-16 border border-warmgrey/30 p-1 text-center text-sm bg-cream">
+            <button onclick="cart.removeItem(${item.id}, '${item.size}'); renderCart();" class="text-red-500 hover:text-red-700 text-xs">حذف</button>
+          </div>
+        </div>
+      `).join('');
+
+      const total = cart.getTotal();
+      subtotalEl.textContent = `${total.toLocaleString()} دج`;
+      totalEl.textContent = `${total.toLocaleString()} دج`;
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+</body>
+</html>

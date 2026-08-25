@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NÜR | المتجر</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#f4efe6',
+            charcoal: '#1c1c1c',
+            terracotta: '#c96f4a',
+            sand: '#e4dccb',
+            warmgrey: '#8a8175'
+          },
+          fontFamily: {
+            title: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal font-body flex flex-col min-h-screen">
+
+  <header class="bg-cream sticky top-0 z-50 border-b border-warmgrey/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-title text-3xl font-bold tracking-widest text-charcoal">NÜR</a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-terracotta transition">الرئيسية</a>
+        <a href="shop.html" class="text-terracotta">المتجر</a>
+        <a href="about.html" class="hover:text-terracotta transition">من نحن</a>
+        <a href="contact.html" class="hover:text-terracotta transition">اتصل بنا</a>
+      </nav>
+      <a href="cart.html" class="relative p-2 text-charcoal hover:text-terracotta transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 pb-6 border-b border-warmgrey/20 gap-4">
+      <div>
+        <h1 class="font-title text-3xl sm:text-4xl text-charcoal">المتجر</h1>
+        <p class="text-warmgrey text-sm mt-1">جميع القطع المصممة بعناية</p>
+      </div>
+      <span id="product-count" class="text-sm text-warmgrey">6 منتجات</span>
+    </div>
+
+    <div class="grid lg:grid-cols-4 gap-8">
+      <aside class="space-y-6">
+        <div class="bg-sand/30 p-5 border border-warmgrey/10 space-y-6">
+          <h3 class="font-title text-base mb-3 border-b border-warmgrey/20 pb-2">الأصناف</h3>
+          <div class="space-y-2 text-sm text-warmgrey">
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="all" checked onchange="filterProducts()" class="accent-terracotta"> الكل
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="تيشيرت" onchange="filterProducts()" class="accent-terracotta"> تيشيرت
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="هودي" onchange="filterProducts()" class="accent-terracotta"> هودي
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="جاكيت" onchange="filterProducts()" class="accent-terracotta"> جاكيت
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="بنطال" onchange="filterProducts()" class="accent-terracotta"> بنطال
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="سترة" onchange="filterProducts()" class="accent-terracotta"> سترة
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer hover:text-charcoal">
+              <input type="radio" name="category" value="إكسسوار" onchange="filterProducts()" class="accent-terracotta"> إكسسوارات
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <section class="lg:col-span-3">
+        <div id="shop-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-charcoal text-cream py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+      <div class="space-y-3">
+        <span class="font-title text-2xl tracking-widest block text-white">NÜR</span>
+        <p class="text-warmgrey">تصاميم بسيطة، أنيقة، وعصرية.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <span class="text-white font-medium mb-1">الصفحات</span>
+        <a href="index.html" class="text-warmgrey hover:text-cream">الرئيسية</a>
+        <a href="shop.html" class="text-warmgrey hover:text-cream">المتجر</a>
+        <a href="about.html" class="text-warmgrey hover:text-cream">من نحن</a>
+        <a href="contact.html" class="text-warmgrey hover:text-cream">اتصل بنا</a>
+      </div>
+      <div class="space-y-2 text-warmgrey">
+        <span class="text-white font-medium block mb-1">التواصل</span>
+        <p>شارع ديدوش مراد، الجزائر العاصمة</p>
+        <p>hello@nur.dz</p>
+        <p>@nur.dz</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-warmgrey/20 text-center text-xs text-warmgrey">
+      © 2026 NÜR. جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    const fallbackProducts = [
+      { id: 1, name: "Essential Tee", category: "تيشيرت", price: 2900, image: "https://i.pinimg.com/736x/ea/b4/1d/eab41ddd59fba789429d3ab9aa699af2.jpg" },
+      { id: 2, name: "Oversized Hoodie", category: "هودي", price: 5900, image: "https://i.pinimg.com/736x/1c/fd/68/1cfd68f37b1f8e3c64ef56ff52b9c7ed.jpg" },
+      { id: 3, name: "Denim Jacket", category: "جاكيت", price: 8900, image: "https://i.pinimg.com/1200x/9e/43/01/9e43019f0566b2ca31c99d129a61aecc.jpg" },
+      { id: 4, name: "Cargo Pants", category: "بنطال", price: 4900, image: "https://i.pinimg.com/736x/3e/f2/a9/3ef2a9e2b7eeb453f411ed9985244cf6.jpg" },
+      { id: 5, name: "Knit Sweater", category: "سترة", price: 5400, image: "https://i.pinimg.com/736x/13/4f/83/134f838a6f8292656cd1934452af02a5.jpg" },
+      { id: 6, name: "Classic Cap", category: "إكسسوار", price: 1900, image: "https://i.pinimg.com/736x/5e/54/47/5e544798fafeb92874da050f1398ab95.jpg" }
+    ];
+
+    const getItems = () => (typeof products !== 'undefined' && products.length) ? products : fallbackProducts;
+
+    function renderProducts(items) {
+      const shopGrid = document.getElementById('shop-grid');
+      const countEl = document.getElementById('product-count');
+      countEl.textContent = `${items.length} منتجات`;
+      shopGrid.innerHTML = items.map(p => `
+        <div class="bg-white border border-warmgrey/10 group flex flex-col justify-between">
+          <div>
+            <a href="product.html?id=${p.id}" class="h-80 overflow-hidden bg-sand block">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+            </a>
+            <div class="p-4">
+              <span class="text-xs text-warmgrey">${p.category}</span>
+              <h3 class="font-title text-lg mt-1"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+              <p class="text-charcoal font-semibold mt-1">${p.price.toLocaleString()} دج</p>
+            </div>
+          </div>
+          <div class="p-4 pt-0">
+            <button onclick="if(typeof cart !== 'undefined'){ cart.addItem(${p.id}); alert('تمت الإضافة للسلة'); }" class="w-full bg-cream hover:bg-terracotta hover:text-white text-charcoal py-2 text-sm border border-warmgrey/20 transition">أضف للسلة</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterProducts() {
+      const list = getItems();
+      const selected = document.querySelector('input[name="category"]:checked').value;
+      renderProducts(selected === 'all' ? list : list.filter(p => p.category === selected));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderProducts(getItems()));
+  </script>
+</body>
+</html>
